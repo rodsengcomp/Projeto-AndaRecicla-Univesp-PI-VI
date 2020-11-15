@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "568386618323",
+    "firebase_url": "https://andareclicavai.firebaseio.com",
+    "project_id": "andareclicavai",
+    "storage_bucket": "andareclicavai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568386618323:android:a23e8888311d9ee87ce526",
+        "android_client_info": {
+          "package_name": "andarecicla.a000webhostapp.com.reciclaanda2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568386618323-33vh2o9s340cupus26gshdp5p9r7lpvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIcsxBe0s9iQLEr7FfbZUozsFwt42lm5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568386618323-33vh2o9s340cupus26gshdp5p9r7lpvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
