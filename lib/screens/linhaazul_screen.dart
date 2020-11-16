@@ -27,7 +27,7 @@ class _LinhaAzulScreenState extends State<LinhaAzulScreen> {
                     Padding(
                       padding: const EdgeInsets.all(14.0),
                       child: const Image(
-                        image: NetworkImage('https://s2.glbimg.com/WLII6LDhDPa8gKsqwfJRx9V1W-A=/0x0:950x600/1008x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2011/11/09/ghana07.jpg'),
+                        image: AssetImage('assets/images/linha_azul.jpg'),
                       ),
                     ),
                     Text('fonte: autor',

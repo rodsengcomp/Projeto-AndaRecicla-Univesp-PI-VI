@@ -7,7 +7,6 @@ import 'package:reciclaanda2/screens/linhabranca_screen.dart';
 import 'package:reciclaanda2/screens/linhamarron_screen.dart';
 import 'package:reciclaanda2/screens/linhaverde_screen.dart';
 import 'package:reciclaanda2/screens/linhavermelha_screen.dart';
-import 'package:reciclaanda2/tabs/quemsomos_tab.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 
@@ -53,7 +52,7 @@ class HomeTab extends StatelessWidget {
                 if (!snapshot.hasData)
                   return SliverToBoxAdapter(
                     child: Container(
-                      height: 150.0,
+                      height: 200.0,
                       alignment: Alignment.center,
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -64,42 +63,6 @@ class HomeTab extends StatelessWidget {
                   return SliverList(
                     delegate: SliverChildListDelegate([
                       Container(
-                        child: Card(color: Colors.white,
-                          clipBehavior: Clip.antiAlias,
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: Icon(Icons.accessibility),
-                                title: const Text(
-                                  'Quem somos',
-                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
-                                ),
-                                tileColor: Colors.amber.shade300,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Image.asset('assets/images/card_home.png')
-                              ),
-                              ButtonBar(
-                                alignment: MainAxisAlignment.start,
-                                children: [
-                                  FlatButton(
-                                    textColor: Colors.black,
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => QuemSomos()),
-                                      );
-                                    },
-                                    child: const Text('SAIBA MAIS'),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
                         child: Card(color: Colors.blue,
                           clipBehavior: Clip.antiAlias,
                           child: Column(
@@ -107,7 +70,7 @@ class HomeTab extends StatelessWidget {
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                    'Eletrônicos Linha Azul',
+                                    'Linha Azul',
                                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
                                 ),
                                 tileColor: Colors.blue.shade400,
@@ -115,7 +78,7 @@ class HomeTab extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Descarte batedeiras velhas, secadores de cabelo entre outros...',
+                                  'Batedeiras, secadores de cabelo, liquidificadores, ferros elétricos, furadeiras, multiprocessadoras, aquecedores, aspiradores de pó, cafeteiras, centrífugas, máquinas de costura, máquinas de escrever, torradeiras, vaporizadores, ventiladores de mesa, ventiladores de chão, videogames, karaokês, agendas eletrônicas, barbeadores, calculadoras, câmeras fotográficas digitais, microfones, fones de ouvido.',
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 18),
                                 ),
@@ -147,7 +110,7 @@ class HomeTab extends StatelessWidget {
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                  'Eletrônicos Linha Marrom',
+                                  'Linha Marrom',
                                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
                                 ),
                                 tileColor: Colors.brown.shade400,
@@ -155,7 +118,7 @@ class HomeTab extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Descarte aparelhos antigos como DVD, VHS entre outros ...',
+                                  'Aparelhos de DVD, VHS, equipamentos de áudio, filmadoras, câmeras VHS, decodificadores, caixas de som, home theaters, aparelhos de blu-ray, auto rádios, rádios, caixas acústicas...',
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
                                 ),
@@ -195,7 +158,7 @@ class HomeTab extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Descarte Monitores e televisores de plasma, LCD e LED entre outros ...',
+                                  'Monitores e televisores de plasma, LCD e LED, Computadores desktops, notebooks, periféricos, tablets, impressoras, celulares, secretárias eletrônicas, fax, telefonia, placas de circuito integrado, reatores, fios e cabos de energia, discos rígidos, fitas de backup, copiadoras, gravadores e reprodutores de DVD, plotters, scanners, terminais de caixa, terminais inteligentes, thin clients, unidades de armazenamento externo, celulares, acessórios, mídias, PABX, modems, MP3 players, iPods, netbooks, roteadores, smartphones, teclados, equipamentos de rede...',
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
                                 ),
@@ -235,7 +198,7 @@ class HomeTab extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Descarte Geladeiras velhas, Fogões, TVs de tubo, Ar-condicionado entre outros ...',
+                                  'Geladeiras, Fogões, TVs de tubo, Ar-condicionado, Micro-ondas, secadoras de roupas, máquinas de lavar roupas, lava-louças, fornos...',
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
                                 ),
@@ -275,7 +238,7 @@ class HomeTab extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Por fim descarte materiais como baterias e Lâmpadas fluorescentes entre outros ...',
+                                  'Baterias, Lâmpadas fluorescentes, Pilhas e Toners...',
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
                                 ),

@@ -93,6 +93,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(Icons.list, "Descarte de Materiais", pageController, 1),
               DrawerTile(Icons.location_on, "Empresas de Reciclagens", pageController, 2),
               DrawerTile(Icons.playlist_add_check, "Retiradas Agendadas", pageController, 3),
+              DrawerTile(Icons.accessibility, "Quem Somos", pageController, 4),
             ],
           )
         ],

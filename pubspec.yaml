@@ -54,6 +54,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   assets:
@@ -64,6 +65,8 @@ flutter:
     - assets/images/intoscreen_5.png
     - assets/images/curved.jpg
     - assets/images/logo_descarte.png
+    - assets/images/linha_azul.jpg
+    - assets/images/card_home.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

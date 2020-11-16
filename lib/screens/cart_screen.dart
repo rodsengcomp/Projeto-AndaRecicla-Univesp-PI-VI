@@ -68,7 +68,7 @@ class CartScreen extends StatelessWidget {
             );
           } else if (model.products == null || model.products.length == 0){
             return Center(
-              child: Text("Nenhuma Retirada de Material!",
+              child: Text("Nenhuma Retirada Aguardando Agendamento!",
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,),
             );

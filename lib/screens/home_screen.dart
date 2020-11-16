@@ -3,6 +3,7 @@ import 'package:reciclaanda2/tabs/home_tab.dart';
 import 'package:reciclaanda2/tabs/orders_tab.dart';
 import 'package:reciclaanda2/tabs/places_tab.dart';
 import 'package:reciclaanda2/tabs/products_tab.dart';
+import 'package:reciclaanda2/tabs/quemsomos_tab.dart';
 import 'package:reciclaanda2/widgets/cart_button.dart';
 import 'package:reciclaanda2/widgets/custom_drawer.dart';
 
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Solicitação de Retirada de Materiais"),
+            title: Text("Descarte de Materiais"),
             centerTitle: true,
           ),
           drawer: CustomDrawer(_pageController),
@@ -40,10 +41,18 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Minhas Solicitações"),
+            title: Text("Retiradas Agendadas"),
             centerTitle: true,
           ),
           body: OrdersTab(),
+          drawer: CustomDrawer(_pageController),
+        ),
+        Scaffold(
+          appBar: AppBar(
+            title: Text("Quem Somos"),
+            centerTitle: true,
+          ),
+          body: QuemSomos(),
           drawer: CustomDrawer(_pageController),
         )
       ],
