@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Carrinho"),
+        title: Text("Minhas Solicitações"),
         actions: <Widget>[
           Container(
             padding: EdgeInsets.only(right: 8.0),

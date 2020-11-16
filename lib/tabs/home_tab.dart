@@ -7,6 +7,7 @@ import 'package:reciclaanda2/screens/linhabranca_screen.dart';
 import 'package:reciclaanda2/screens/linhamarron_screen.dart';
 import 'package:reciclaanda2/screens/linhaverde_screen.dart';
 import 'package:reciclaanda2/screens/linhavermelha_screen.dart';
+import 'package:reciclaanda2/screens/lixoeletronico_screen.dart';
 import 'package:reciclaanda2/tabs/quemsomos_tab.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -78,7 +79,7 @@ class HomeTab extends StatelessWidget {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
-                                child: Image.asset('assets/images/card_home.png')
+                                child: Image.asset('assets/images/lixeiras-coleta-seletiva.jpg')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -89,6 +90,42 @@ class HomeTab extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(builder: (context) => QuemSomos()),
+                                      );
+                                    },
+                                    child: const Text('SAIBA MAIS'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Card(color: Colors.grey,
+                          clipBehavior: Clip.antiAlias,
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.accessibility),
+                                title: const Text(
+                                  'O que é lixo eletrônico?',
+                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
+                                ),
+                                tileColor: Colors.grey.shade300,
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/o_que_e_lixo_eletronico.jpg')
+                              ),
+                              ButtonBar(
+                                alignment: MainAxisAlignment.start,
+                                children: [
+                                  FlatButton(
+                                    textColor: Colors.black,
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => LixoEletronico()),
                                       );
                                     },
                                     child: const Text('SAIBA MAIS'),
