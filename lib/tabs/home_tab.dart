@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:reciclaanda2/screens/elixo_screen.dart';
+import 'package:reciclaanda2/screens/linhaazul_screen.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 
@@ -55,39 +56,41 @@ class HomeTab extends StatelessWidget {
                     ),
                   );
                 else
-                  return SliverFixedExtentList(
-                    itemExtent: 200,
+                  return SliverList(
                     delegate: SliverChildListDelegate([
                       Container(
-                        child: Card(
+                        child: Card(color: Colors.blue,
+                          clipBehavior: Clip.antiAlias,
                           child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              const Image(
-                                width: 400,
-                              height: 70,
-                              fit:BoxFit.fill,
-                              image: NetworkImage('https://i0.wp.com/imperiobateriassantos.com.br/wp-content/uploads/2018/06/Imp%C3%A9rio-Baterias-Santos-05-2018-A-melhor-maneira-de-evitar-o-descarte-irregular-da-bateria-de-carro-A.jpg'),
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.accessibility),
+                                title: const Text(
+                                    'Linha Azul',
+                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
+                                ),
+                                tileColor: Colors.blue.shade400,
                               ),
-                              const ListTile(
-                                leading: Icon(Icons.electrical_services),
-                                title: Text('O que é Lixo Eletrônico ?'),
-                                subtitle: Text('Saiba tudo sobre o e-lixo e seu destino.'),
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Batedeiras, secadores de cabelo, liquidificadores, ferros elétricos, furadeiras, multiprocessadoras, aquecedores, aspiradores de pó, cafeteiras, centrífugas, máquinas de costura, máquinas de escrever, torradeiras, vaporizadores, ventiladores de mesa, ventiladores de chão, videogames, karaokês, agendas eletrônicas, barbeadores, calculadoras, câmeras fotográficas digitais, microfones, fones de ouvido.',
+                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 18),
+                                ),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  const SizedBox(width: 8),
-                                  TextButton(
-                                    child: const Text('SAIBA MAIS'),
+                              ButtonBar(
+                                alignment: MainAxisAlignment.start,
+                                children: [
+                                  FlatButton(
+                                    textColor: Colors.white,
                                     onPressed: () {
                                       Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => ElixoScreen()),
+                                        context,
+                                        MaterialPageRoute(builder: (context) => LinhaAzulScreen()),
                                       );
                                     },
+                                    child: const Text('SAIBA MAIS'),
                                   ),
-                                  const SizedBox(width: 8),
                                 ],
                               ),
                             ],
@@ -95,107 +98,35 @@ class HomeTab extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        child: Card(
+                        child: Card(color: Colors.brown,
+                          clipBehavior: Clip.antiAlias,
                           child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              const Image(
-                                width: 400,
-                                height: 70,
-                                fit:BoxFit.fill,
-                                image: NetworkImage('https://i0.wp.com/imperiobateriassantos.com.br/wp-content/uploads/2018/06/Imp%C3%A9rio-Baterias-Santos-05-2018-A-melhor-maneira-de-evitar-o-descarte-irregular-da-bateria-de-carro-A.jpg'),
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.accessibility),
+                                title: const Text(
+                                  'Linha Marrom',
+                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
+                                ),
+                                tileColor: Colors.brown.shade400,
                               ),
-                              const ListTile(
-                                leading: Icon(Icons.electrical_services),
-                                title: Text('O que é Lixo Eletrônico ?'),
-                                subtitle: Text('Saiba tudo sobre o e-lixo e seu destino.'),
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Monitores e TVs LCDs, plasma e LED, equipamentos de áudio e home theaters, projetores (data-show), filmadoras e câmeras digitais, aparelhos de VHS, DVD, blu-ray, impressoras de diversos tamanhos.',
+                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
+                                ),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  const SizedBox(width: 8),
-                                  TextButton(
-                                    child: const Text('SAIBA MAIS'),
+                              ButtonBar(
+                                alignment: MainAxisAlignment.start,
+                                children: [
+                                  FlatButton(
+                                    textColor: Colors.white,
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => ElixoScreen()),
-                                      );
+                                      // Perform some action
                                     },
-                                  ),
-                                  const SizedBox(width: 8),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        child: Card(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              const Image(
-                                width: 400,
-                                height: 70,
-                                fit:BoxFit.fill,
-                                image: NetworkImage('https://i0.wp.com/imperiobateriassantos.com.br/wp-content/uploads/2018/06/Imp%C3%A9rio-Baterias-Santos-05-2018-A-melhor-maneira-de-evitar-o-descarte-irregular-da-bateria-de-carro-A.jpg'),
-                              ),
-                              const ListTile(
-                                leading: Icon(Icons.electrical_services),
-                                title: Text('O que é Lixo Eletrônico ?'),
-                                subtitle: Text('Saiba tudo sobre o e-lixo e seu destino.'),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  const SizedBox(width: 8),
-                                  TextButton(
                                     child: const Text('SAIBA MAIS'),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => ElixoScreen()),
-                                      );
-                                    },
                                   ),
-                                  const SizedBox(width: 8),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        child: Card(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              const Image(
-                                width: 400,
-                                height: 70,
-                                fit:BoxFit.fill,
-                                image: NetworkImage('https://i0.wp.com/imperiobateriassantos.com.br/wp-content/uploads/2018/06/Imp%C3%A9rio-Baterias-Santos-05-2018-A-melhor-maneira-de-evitar-o-descarte-irregular-da-bateria-de-carro-A.jpg'),
-                              ),
-                              const ListTile(
-                                leading: Icon(Icons.electrical_services),
-                                title: Text('O que é Lixo Eletrônico ?'),
-                                subtitle: Text('Saiba tudo sobre o e-lixo e seu destino.'),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  const SizedBox(width: 8),
-                                  TextButton(
-                                    child: const Text('SAIBA MAIS'),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => ElixoScreen()),
-                                      );
-                                    },
-                                  ),
-                                  const SizedBox(width: 8),
                                 ],
                               ),
                             ],

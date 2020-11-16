@@ -55,9 +55,9 @@ class _IntroScreenState extends State<IntroScreen> {
   ];
   final List<Color> colors = [
     Colors.green.shade400,
-    Colors.brown.shade400,
-    Colors.blue.shade400,
-    Colors.red.shade400,
+    Colors.green.shade400,
+    Colors.green.shade400,
+    Colors.green.shade400,
   ];
   @override
   Widget build(BuildContext context) {
