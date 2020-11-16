@@ -1,19 +1,21 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:reciclaanda2/screens/home_screen.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-
-class ElixoScreen extends StatefulWidget {
+class LinhaVerdeScreen extends StatefulWidget {
   @override
-  _ElixoScreenState createState() => _ElixoScreenState();
+  _LinhaVerdeScreenState createState() => _LinhaVerdeScreenState();
 }
 
-class _ElixoScreenState extends State<ElixoScreen> {
+class _LinhaVerdeScreenState extends State<LinhaVerdeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lixo eletrônico ou e-lixo "),
+        backgroundColor: Colors.green,
+        title: Text("Linha Verde de Lixo Eletrônico"),
         centerTitle: true,
         actions: <Widget>[
         ],
@@ -81,3 +83,4 @@ class _ElixoScreenState extends State<ElixoScreen> {
     );
   }
 }
+
