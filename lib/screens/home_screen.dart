@@ -3,7 +3,7 @@ import 'package:reciclaanda2/tabs/home_tab.dart';
 import 'package:reciclaanda2/tabs/orders_tab.dart';
 import 'package:reciclaanda2/tabs/places_tab.dart';
 import 'package:reciclaanda2/tabs/products_tab.dart';
-import 'package:reciclaanda2/tabs/quemsomos_tab.dart';
+import 'package:reciclaanda2/tabs/sobre_tab.dart';
 import 'package:reciclaanda2/widgets/cart_button.dart';
 import 'package:reciclaanda2/widgets/custom_drawer.dart';
 

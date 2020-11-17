@@ -6,9 +6,9 @@ import 'package:reciclaanda2/screens/linhaazul_screen.dart';
 import 'package:reciclaanda2/screens/linhabranca_screen.dart';
 import 'package:reciclaanda2/screens/linhamarron_screen.dart';
 import 'package:reciclaanda2/screens/linhaverde_screen.dart';
-import 'package:reciclaanda2/screens/linhavermelha_screen.dart';
+import 'package:reciclaanda2/screens/linhaespecial_screen.dart';
 import 'package:reciclaanda2/screens/lixoeletronico_screen.dart';
-import 'package:reciclaanda2/tabs/quemsomos_tab.dart';
+import 'package:reciclaanda2/tabs/sobre_tab.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 
