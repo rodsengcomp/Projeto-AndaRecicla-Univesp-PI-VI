@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class LinhaBrancaScreen extends StatefulWidget {
   @override
@@ -15,8 +16,7 @@ class _LinhaBrancaScreenState extends State<LinhaBrancaScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: Text("Linha Branca de Lixo Eletrônico",
-        ),
+        title: Text("Linha Branca de Lixo Eletrônico"),
         centerTitle: true,
         actions: <Widget>[
         ],
@@ -28,10 +28,10 @@ class _LinhaBrancaScreenState extends State<LinhaBrancaScreen> {
               Padding(
                 padding: const EdgeInsets.all(14.0),
                 child: const Image(
-                  image: NetworkImage('https://s2.glbimg.com/WLII6LDhDPa8gKsqwfJRx9V1W-A=/0x0:950x600/1008x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2011/11/09/ghana07.jpg'),
+                  image: AssetImage('assets/images/linha_branca_screen.jpg'),
                 ),
               ),
-              Text('fonte: autor',
+              Text('fonte: https://noticias.portaldaindustria.com.br/',
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 12,fontStyle: FontStyle.italic),
               ),
@@ -39,7 +39,7 @@ class _LinhaBrancaScreenState extends State<LinhaBrancaScreen> {
                 padding: const EdgeInsets.all(4.0),
                 child: ListTile(
                   title: const Text(
-                    'Montanha de lixo eletrônico não para de crescer no mundo',
+                    'Linha Branca de produtos eletrônicos tem vída útil média',
                     textAlign: TextAlign.start,
                     style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
                   ),
@@ -49,33 +49,37 @@ class _LinhaBrancaScreenState extends State<LinhaBrancaScreen> {
                 padding: const EdgeInsets.all(2.0),
                 child: ListTile(
                   subtitle: Text(
-                    'De todas as montanhas de lixo geradas no mundo, a dos eletroeletrônicos é a que cresce mais rápido: são 53 milhões de toneladas por ano. Teoricamente, tudo poderia ser reciclado.',
+                    'A vida útil média de alguns equipamentos de médio porte pode variar de ~5-13 anos.',
                     textAlign: TextAlign.justify,
-                    style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 16),
+                    style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 22),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: ListTile(
-                  title: const Text(
-                    'Se as regiões com a maior produção per capita de lixo eletrônico forem escurecidas num mapa mundi, ficará escuro na Europa, na América do Norte, na Austrália e na Nova Zelândia. Um americano gera, em média, mais de 19 kg de lixo eletrônico por ano. Um alemão, cerca de 23 kg, e um norueguês, até mesmo mais de 28 kg. Em todo o mundo são 53 milhões de toneladas de lixo eletrônico por ano, composto de todo tipo de aparelhos, como celulares, computadores, geladeiras e células fotovoltaicas, afirma o mais recente estudo sobre o tema, apresentado pela Universidade das Nações Unidas nesta quinta-feira (07).',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.normal,fontSize: 14),
+                child:  InkWell(
+                  child: Text("Clique aqui para descartar seu lixo eletrônico",
+                    style: TextStyle(color: Colors.blue,fontStyle: FontStyle.italic,decoration: TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 20),
                   ),
+                  onTap: () async {
+                    if (await canLaunch("https://www.greeneletron.org.br/")) {
+                      await launch("https://www.greeneletron.org.br/");
+                    }
+                  },
                 ),
               ),
-              ButtonBar(
-                alignment: MainAxisAlignment.start,
-                children: [
-                  FlatButton(
-                    textColor: Colors.white,
-                    onPressed: () {
-                      // Perform some action
-                    },
-                    child: const Text('SAIBA MAIS'),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListTile(
+                  title: const Text('Os eletroeletrônicos de uso doméstico abrangem os equipamentos de baixo alto e/ou dimensão cujo os componentes podem ser facilmente desmontados e ser reaproveitados para outros tipos de produtos ou até mesmo para fins de reciclagem total.\n\n'
+                                    '\n\n'
+                                    '\n\n'
+                                    'O app ANDA RECICLA, facilita a busca de as empresas especializadas e regulamentadas, mais próximos do local informado, para um descarte ambientalmente correto, seguro e fácil. Cidadão faça sua parte!\n\n'
+                                    '*Para informações sobre serviços de coleta, consulte diretamente as empresas especializadas mais próxima de sua localidade.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.normal,fontSize: 20),
                   ),
-                ],
+                ),
               ),
             ],
           ),
@@ -84,5 +88,4 @@ class _LinhaBrancaScreenState extends State<LinhaBrancaScreen> {
     );
   }
 }
-
 

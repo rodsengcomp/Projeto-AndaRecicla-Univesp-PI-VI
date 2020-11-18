@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class LinhaAzulScreen extends StatefulWidget {
   @override
@@ -13,74 +14,79 @@ class _LinhaAzulScreenState extends State<LinhaAzulScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text("Linha Azul de Lixo Eletrônico"),
-          centerTitle: true,
-          actions: <Widget>[
-          ],
-        ),
-        body: ListView(
-              children: <Widget>[
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: const Image(
-                        image: AssetImage('assets/images/linha_azul.jpg'),
-                      ),
-                    ),
-                    Text('fonte: autor',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 12,fontStyle: FontStyle.italic),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: ListTile(
-                        title: const Text(
-                          'Montanha de lixo eletrônico não para de crescer no mundo',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: ListTile(
-                        subtitle: Text(
-                          'De todas as montanhas de lixo geradas no mundo, a dos eletroeletrônicos é a que cresce mais rápido: são 53 milhões de toneladas por ano. Teoricamente, tudo poderia ser reciclado.',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 16),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: ListTile(
-                        title: const Text(
-                        'Se as regiões com a maior produção per capita de lixo eletrônico forem escurecidas num mapa mundi, ficará escuro na Europa, na América do Norte, na Austrália e na Nova Zelândia. Um americano gera, em média, mais de 19 kg de lixo eletrônico por ano. Um alemão, cerca de 23 kg, e um norueguês, até mesmo mais de 28 kg. Em todo o mundo são 53 milhões de toneladas de lixo eletrônico por ano, composto de todo tipo de aparelhos, como celulares, computadores, geladeiras e células fotovoltaicas, afirma o mais recente estudo sobre o tema, apresentado pela Universidade das Nações Unidas nesta quinta-feira (07).',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.normal,fontSize: 14),
-                      ),
-                      ),
-                    ),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        FlatButton(
-                          textColor: Colors.white,
-                          onPressed: () {
-                            // Perform some action
-                          },
-                          child: const Text('SAIBA MAIS'),
-                        ),
-                      ],
-                    ),
-                  ],
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text("Linha Azul de Lixo Eletrônico"),
+        centerTitle: true,
+        actions: <Widget>[
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: const Image(
+                  image: AssetImage('assets/images/linha_azul_screen.jpg'),
                 ),
-              ],
-            ),
-        );
+              ),
+              Text('fonte: https://noticias.portaldaindustria.com.br/',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 12,fontStyle: FontStyle.italic),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListTile(
+                  title: const Text(
+                    'Linha Azul de produtos eletrônicos tem vída útil média',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: ListTile(
+                  subtitle: Text(
+                    'A vida útil média de alguns equipamentos de pequeno porte pode variar de ~10-12 anos.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 22),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child:  InkWell(
+                  child: Text("Clique aqui para descartar seu lixo eletrônico",
+                    style: TextStyle(color: Colors.blue,fontStyle: FontStyle.italic,decoration: TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 20),
+                  ),
+                  onTap: () async {
+                    if (await canLaunch("https://www.greeneletron.org.br/")) {
+                      await launch("https://www.greeneletron.org.br/");
+                    }
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListTile(
+                  title: const Text('Os eletroeletrônicos de uso doméstico abrangem os equipamentos de baixo volume e/ou dimensão cujo os componentes podem baterias com alto poder de toxicidade que por descarte incorreto pode poluir o meio ambiente.\n\n'
+                                    'Os eletroeletrônicos quando obsoletos ou ao seu término da vida útil são por vezes descartados sem os devidos critérios, ocasionando riscos de contaminação a natureza e a vida humana.\n\n'
+                                    'Vale ressaltar que é, de inteira responsabilidade do consumidor efetuar a destinação correta e/ou descarte destes equipamentos, a fim de que o fabricante e empresas especializadas, devidamente autorizadas, possam realizar a destinação final destes produtos e/ou materiais, conforme o caso, cumprindo o clico de logística reversa para este fim.\n\n'
+                                    'O descarte de produtos da linha azul é similar ao das linhas marrom e verde.\n\n'
+                                    'O app ANDA RECICLA, facilita a busca de as empresas especializadas e regulamentadas, mais próximos do local informado, para um descarte ambientalmente correto, seguro e fácil. Cidadão faça sua parte!\n\n'
+                                    '*Para informações sobre serviços de coleta, consulte diretamente as empresas especializadas mais próxima de sua localidade.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.normal,fontSize: 20),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 

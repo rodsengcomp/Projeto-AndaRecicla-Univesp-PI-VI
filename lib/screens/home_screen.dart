@@ -4,6 +4,7 @@ import 'package:reciclaanda2/tabs/orders_tab.dart';
 import 'package:reciclaanda2/tabs/places_tab.dart';
 import 'package:reciclaanda2/tabs/products_tab.dart';
 import 'package:reciclaanda2/tabs/sobre_tab.dart';
+import 'package:reciclaanda2/tabs/retirada_tab.dart';
 import 'package:reciclaanda2/widgets/cart_button.dart';
 import 'package:reciclaanda2/widgets/custom_drawer.dart';
 
@@ -24,20 +25,27 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Descarte de Materiais"),
+            title: Text("Não Eletrônicos (Ecopontos - SP)"),
             centerTitle: true,
           ),
+          body: WebViewExample(),
           drawer: CustomDrawer(_pageController),
-          body: MateriaisTab(),
-          floatingActionButton: CartButton(),
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Empresas de Reciclagens"),
+            title: Text("Reciclagens de Eletrônicos"),
             centerTitle: true,
           ),
           body: PlacesTab(),
           drawer: CustomDrawer(_pageController),
+        ),
+        Scaffold(
+          appBar: AppBar(
+            title: Text("Agendamento de Retirada"),
+            centerTitle: true,
+          ),
+          drawer: CustomDrawer(_pageController),
+          body: MateriaisTab(),
         ),
         Scaffold(
           appBar: AppBar(
@@ -49,10 +57,10 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Quem Somos"),
+            title: Text("Sobre o Aplicativo"),
             centerTitle: true,
           ),
-          body: QuemSomos(),
+          body: Sobre(),
           drawer: CustomDrawer(_pageController),
         )
       ],

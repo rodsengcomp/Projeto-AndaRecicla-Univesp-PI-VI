@@ -8,7 +8,7 @@ import 'package:reciclaanda2/screens/linhamarron_screen.dart';
 import 'package:reciclaanda2/screens/linhaverde_screen.dart';
 import 'package:reciclaanda2/screens/linhaespecial_screen.dart';
 import 'package:reciclaanda2/screens/lixoeletronico_screen.dart';
-import 'package:reciclaanda2/tabs/sobre_tab.dart';
+import 'package:reciclaanda2/screens/quemsomos_screen.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 
@@ -65,17 +65,17 @@ class HomeTab extends StatelessWidget {
                   return SliverList(
                     delegate: SliverChildListDelegate([
                       Container(
-                        child: Card(color: Colors.white,
+                        child: Card(color: Colors.indigo,
                           clipBehavior: Clip.antiAlias,
                           child: Column(
                             children: [
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                  'Quem somos',
-                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
+                                  'O que é Anda Recicla?',
+                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
                                 ),
-                                tileColor: Colors.amber.shade300,
+                                tileColor: Colors.indigo.shade300,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
@@ -85,7 +85,7 @@ class HomeTab extends StatelessWidget {
                                 alignment: MainAxisAlignment.start,
                                 children: [
                                   FlatButton(
-                                    textColor: Colors.black,
+                                    textColor: Colors.white,
                                     onPressed: () {
                                       Navigator.push(
                                         context,
@@ -150,12 +150,8 @@ class HomeTab extends StatelessWidget {
                                 tileColor: Colors.blue.shade400,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Descarte batedeiras velhas, secadores de cabelo entre outros...',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 18),
-                                ),
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/linha_azuls.jpg')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -190,12 +186,8 @@ class HomeTab extends StatelessWidget {
                                 tileColor: Colors.brown.shade400,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Descarte aparelhos antigos como DVD, VHS entre outros ...',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
-                                ),
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/linha_marrom.jpg')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -224,18 +216,14 @@ class HomeTab extends StatelessWidget {
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                  'Linha Verde',
+                                  'Eletrônicos Linha Verde',
                                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
                                 ),
                                 tileColor: Colors.green.shade400,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Descarte Monitores e televisores de plasma, LCD e LED entre outros ...',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
-                                ),
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/linha_verde.jpg')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -264,18 +252,14 @@ class HomeTab extends StatelessWidget {
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                  'Linha Branca',
+                                  'Eletrônicos Linha Branca',
                                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.black),
                                 ),
                                 tileColor: Colors.grey.shade300,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Descarte Geladeiras velhas, Fogões, TVs de tubo, Ar-condicionado entre outros ...',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
-                                ),
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/linha_branca.png')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -304,18 +288,14 @@ class HomeTab extends StatelessWidget {
                               ListTile(
                                 leading: Icon(Icons.accessibility),
                                 title: const Text(
-                                  'Linha Especial',
-                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
+                                  'Eletrônicos Linha Especial',
+                                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),
                                 ),
-                                tileColor: Colors.red.shade400,
+                                tileColor: Colors.red.shade300,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Por fim descarte materiais como baterias e Lâmpadas fluorescentes entre outros ...',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,fontSize: 20),
-                                ),
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Image.asset('assets/images/linha_spacial.jpg')
                               ),
                               ButtonBar(
                                 alignment: MainAxisAlignment.start,
@@ -325,7 +305,7 @@ class HomeTab extends StatelessWidget {
                                     onPressed: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => LinhaVermelhaScreen()),
+                                        MaterialPageRoute(builder: (context) => LinhaEspecialScreen()),
                                       );
                                     },
                                     child: const Text('SAIBA MAIS'),
@@ -336,6 +316,7 @@ class HomeTab extends StatelessWidget {
                           ),
                         ),
                       ),
+
                     ]),
                   );
               },
